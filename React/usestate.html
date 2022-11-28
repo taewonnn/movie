@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+
+    <script type="text/babel">
+      // 자동으로 리렌더링하게 하는 방법!!!
+      const root = document.getElementById("root");
+
+      function App() {
+        const [counter, setCounter] = React.useState(0);
+
+        const onClick = () => {
+          setCounter(counter +1);
+        }
+        
+        return (
+          <div>
+            <h3>Total Clicsk: {counter}</h3>
+            <button onClick={onClick}>Click me</button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App/>, root);
+
+
+
+      // useState()
+      // useState는 배열 하나를 준다! 
+      // 그 배열의 첫 번쨰 요소는 초기값, 두 번째는 초기값을 업데이트하기 위한..
+
+      
+      // 구조분해할당!
+      // const food = ["tomato", "potato"]
+      // const tomato = food[0]
+      // const potato = food[1]
+
+      // 위처럼 복잡하지 않고, 간단하고 짧게 배열 내에 첫 번째, 두 번째 요소를 꺼내는 방법!!
+      
+      // const [myFavFood, mySecondFavFood ] = food;
+      // myFavFood -> tomato
+      // mySecondFavFood -> potato
+
+
+
+    </script>
+</html>

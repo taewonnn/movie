@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+
+    <script type="text/babel">
+
+      function App() {
+        const [minutes, setMinutes] = React.useState();
+
+        // flipped는 tru false인 변수!
+        const [flipped, setFlipped] = React.useState(false);
+        
+        const onChange = (event) => {
+          setMinutes(event.target.value)
+        }
+
+        // 함수 표현 방식2
+        // function onChange() {
+        //   console.log("somebody wrote")
+        // }
+
+        const reset = () => {
+          setMinutes(0);
+        }
+
+        // 현재 값을 받아서 그 반대의 값을 내놓겠다!
+        const onFlip = () => setFlipped((current) => !current);
+
+        return (
+          <div>
+            <h1 className="hi">Super Converter</h1>
+            <div>
+              <label htmlFor="minutes" >Minutes</label>
+              <input value={minutes} onChange={onChange}  disabled={flipped === true} id="minutes" 
+              placeholder="Minutes" type="number"/>              
+
+              <h4>You want to convert {minutes}</h4>
+            </div>
+
+            <div>
+              <label htmlFor="hours" >Hours</label>
+              <input value={Math.round(minutes / 60)} disabled={flipped === false} id="hours" placeholder="Hours" type="number" />
+            </div>
+
+            <button onClick={reset}>Reset</button>
+            <button onClick={onFlip}>Flip</button>
+          </div>
+        );
+      }
+
+      const root = document.getElementById("root");
+      ReactDOM.render(<App/>, root);
+
+
+      // disabled={flipped === false} / disabled={flipped === true}
+      // 위 코드를 더 간단하게!
+      // disabled = {!flipped}        /   disabled = {flipped}  
+      
+      // * disabled는 input창에 입력 불가능하게 하는 기능
+
+      
+
+
+    </script>
+</html>

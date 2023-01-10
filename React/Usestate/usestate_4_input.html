@@ -15,14 +15,14 @@
 
     <script type="text/babel">
 
-      function App() {
+        function App() {
         const [amount, setAmount] = React.useState();
 
         // flipped는 tru false인 변수!
         const [inverted, setInverted] = React.useState(false);
         
         const onChange = (event) => {
-          setAmount(event.target.value)
+            setAmount(event.target.value)
         }
 
         // 함수 표현 방식2
@@ -31,59 +31,59 @@
         // }
 
         const reset = () => {
-          setAmount(0);
+            setAmount(0);
         }
 
         // 현재 값을 받아서 그 반대의 값을 내놓겠다!
         const onInvert = () => {
-          reset();
-          setInverted((current) => !current);
+            reset();
+            setInverted((current) => !current);
         }
-          
+        
 
         return (
-          <div>
+            <div>
             <h1 className="hi">Super Converter</h1>
             <div>
-              <label htmlFor="minutes" >Minutes</label>
-              <input 
+                <label htmlFor="minutes" >Minutes</label>
+                <input 
               value={inverted ? Math.round(amount * 60) : amount} 
-              onChange={onChange}  
-              disabled={inverted === true} 
-              id="minutes" 
-              placeholder="Minutes" 
-              type="number"/>              
-              <h4>You want to convert {amount}</h4>
+                onChange={onChange}  
+                disabled={inverted === true} 
+                id="minutes" 
+                placeholder="Minutes" 
+                type="number"/>              
+                <h4>You want to convert {amount}</h4>
             </div>
 
             <div>
-              <label htmlFor="hours" >Hours</label>
-              <input 
-              value={inverted ? amount : Math.round(amount / 60)} 
-              onChange={onChange} 
-              disabled={inverted === false} 
-              id="hours" 
-              placeholder="Hours" 
-              type="number" />
+                <label htmlFor="hours" >Hours</label>
+                <input 
+                value={inverted ? amount : Math.round(amount / 60)} 
+                onChange={onChange} 
+                disabled={inverted === false} 
+                id="hours" 
+                placeholder="Hours" 
+                type="number" />
             </div>
 
             <button onClick={reset}>Reset</button>
             <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
-          </div>
+            </div>
         );
-      }
+        }
 
-      const root = document.getElementById("root");
-      ReactDOM.render(<App/>, root);
+        const root = document.getElementById("root");
+        ReactDOM.render(<App/>, root);
 
 
       // disabled={inverted === false} / disabled={inverted === true}
       // 위 코드를 더 간단하게!
       // disabled = {!inverted}        /   disabled = {inverted}  
-      
+        
       // * disabled는 input창에 입력 불가능하게 하는 기능
 
-      
+        
 
 
     </script>

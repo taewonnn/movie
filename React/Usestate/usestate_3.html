@@ -14,27 +14,27 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
 
     <script type="text/babel">
-      const root = document.getElementById("root");
+        const root = document.getElementById("root");
 
-      function App() {
+        function App() {
         const [counter, setCounter] = React.useState(0);
 
         const onClick = () => {
-          // setCounter(counter +1);
-          // 아래는 setCounter(counter +1 ); 이 방법과 동일하게 작동할 수 있다!
-          // setCounter((현재값) => 리턴값)
-          setCounter((current) => current + 1);
+            // setCounter(counter +1);
+            // 아래는 setCounter(counter +1 ); 이 방법과 동일하게 작동할 수 있다!
+            // setCounter((현재값) => 리턴값)
+            setCounter((current) => current + 1);
         }
         
         return (
-          <div>
-            <h3>Total Clicsk: {counter}</h3>
-            <button onClick={onClick}>Click me</button>
-          </div>
-        );
-      }
+            <div>
+                <h3>Total Clicsk: {counter}</h3>
+                <button onClick={onClick}>Click me</button>
+                </div>
+            );
+        }
 
-      ReactDOM.render(<App/>, root);
+        ReactDOM.render(<App/>, root);
 
 
 

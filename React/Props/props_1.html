@@ -15,50 +15,50 @@
 
     <script type="text/babel">
 
-      function Btn({banana, big}) {
+        function Btn({banana, big}) {
         console.log(banana, big)
         return (
-          <button 
+            <button 
             style={{
-              backgroundColor:"tomato",
-              color: "white",
-              padding: "10px 20px",
-              border: 0,
-              borderRadius: 10,
-              fontSize: big ? 18 : 10,
+                backgroundColor:"tomato",
+                color: "white",
+                padding: "10px 20px",
+                border: 0,
+                borderRadius: 10,
+                fontSize: big ? 18 : 10,
             }}
-          >
-          {banana}
+            >
+            {banana}
         </button>
         )
-      }
+        }
 
 
-      // 위에 button 스타일이 모두 동일한 또 다른 button을 만들 때 한가지를 작성하고 그대로 복붙하는 것이 아닌 다른 방법!!!
+        // 위에 button 스타일이 모두 동일한 또 다른 button을 만들 때 한가지를 작성하고 그대로 복붙하는 것이 아닌 다른 방법!!!
 
-      // => 단 하나의 컴포넌트를 props를 사용해 내용만 다르게 재사용할 수 있게 한다!
-      // => props  -> props는 내가 넣은 모든 것들을 object에 넣어버림!
+        // => 단 하나의 컴포넌트를 props를 사용해 내용만 다르게 재사용할 수 있게 한다!
+        // => props  -> props는 내가 넣은 모든 것들을 object에 넣어버림!
 
 
-      function App() {
+        function App() {
 
         return (
-          <div>
+            <div>
             <Btn banana="Save Changes" big={true}/>
             <Btn banana="Continue" big={false} />
-          </div>
+            </div>
         );
-      }
+        }
 
 
-      const root = document.getElementById("root");
-      ReactDOM.render(<App/>, root);
+        const root = document.getElementById("root");
+        ReactDOM.render(<App/>, root);
 
 
-      // props 
-      // 부모 컴포넌트로부터 자식 컴포넌트에 데이터를 보낼 수 있게 해주는 일종의 방식
+        // props 
+        // 부모 컴포넌트로부터 자식 컴포넌트에 데이터를 보낼 수 있게 해주는 일종의 방식
 
-      //component -> jsx를 변환하는 함수(function)
+        //component -> jsx를 변환하는 함수(function)
 
     </script>
 </html>
